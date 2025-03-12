@@ -1,0 +1,19 @@
+.drop{
+    padding: 20px;
+    background-color: #111111;
+    padding-right: 100px;
+    color: white;
+}
+.down{
+    padding-left: 50px;
+}
+.text{
+    height: 60px;
+    display: flex;
+  
+  }
+  .text p{
+    padding: 20px;
+    padding-left: 35px;
+    font-weight: 600;
+  }

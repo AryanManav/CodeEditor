@@ -1,0 +1,99 @@
+/* Home Container */
+.homecont {
+    height: 100vh;
+    overflow: hidden;
+    background-color: #1A1C1E;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Upper & Lower Sections */
+.upperhome, .lowerhome {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #25282C;
+    padding: 0 80px;
+}
+
+/* Image Styling */
+.uimage, .limage {
+    width: 50vh; /* Smaller Image Size */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Right Content Sections */
+.urighthome, .lrighthome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 50%;
+}
+
+/* Headings */
+.uhead, .lhead {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* About Section */
+.uabt, .labt {
+    text-align: left;
+    color: #C5C5C5;
+    line-height: 1.5;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeInText 0.8s ease-out forwards;
+}
+
+/* Left Content Sections */
+.ulefthome, .llefthome {
+    max-width: 50%;
+}
+
+/* Image Hover Effect */
+.ulefthome img, .llefthome img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.ulefthome img:hover, .llefthome img:hover {
+    transform: scale(1.03);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .upperhome, .lowerhome {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 30px;
+        text-align: center;
+    }
+
+    .urighthome, .lrighthome,
+    .ulefthome, .llefthome {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .uabt, .labt {
+        text-align: center;
+    }
+
+    .uimage, .limage {
+        width: 80%;
+        margin: 20px auto;
+    }
+}
+
+/* Text Fade-in */
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

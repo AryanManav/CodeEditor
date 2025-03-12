@@ -1,0 +1,22 @@
+.output{
+    background-color: #1D1F21;
+    height: 70vh;
+    margin: 30px;
+    margin-top: 20px;
+}
+.output__title{
+    text-align: center;
+    padding-top: 10px;
+    font-weight: 600;
+}
+
+.output__content{
+    padding: 20px;
+}
+
+.shade{
+    opacity: .8;
+}
+.run{
+    margin-left: 30px;
+}

@@ -3,48 +3,64 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif; /* Clean and professional font */
+    font-family: 'Inter', sans-serif;
 }
 
 /* Practice Section */
 .prac {
-    height: 100vh;
-    background: #1E1F22; /* Deep professional background */
+    min-height: 100vh;
+    background: #1E1F22;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
 }
 
 /* Upper Section */
 .pracupper {
-    height: 30vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background: #25282C; /* Subtle contrast */
-    padding: 20px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    background: #25282C;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Header */
 .phead {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #E0E0E0;
-    margin-left: 80px;
+    color: #F39C12;
+    margin-bottom: 15px;
     animation: fadeIn 0.8s ease-in-out;
 }
 
 /* Description */
 .pabt {
-    margin: 10px 80px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #B0B0B0;
     line-height: 1.6;
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Languages Section */
+/* Language Selection */
+.praclower {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.plhead {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #F39C12;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
 .langs {
     display: flex;
     justify-content: center;
@@ -53,22 +69,13 @@
     padding: 20px;
 }
 
-/* Language Header */
-.plhead {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #E0E0E0;
-    margin: 40px 80px;
-    animation: fadeIn 1s ease-in-out;
-}
-
 /* Individual Language Card */
 .praclang {
     display: flex;
     flex-direction: column;
     height: 180px;
     width: 180px;
-    background: #2C2F33; /* Muted, no unnecessary gloss */
+    background: #2C2F33;
     cursor: pointer;
     align-items: center;
     justify-content: center;
@@ -78,23 +85,72 @@
     animation: fadeIn 1.2s ease-in-out;
 }
 
-/* Hover Effect */
 .praclang:hover {
     background: #35383D;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transform: translateY(-3px);
 }
 
-/* Language Image */
 .imagelang {
     width: 80px;
     margin-bottom: 12px;
     transition: transform 0.3s ease-in-out;
 }
 
-/* Subtle Hover Effect on Image */
 .praclang:hover .imagelang {
     transform: scale(1.05);
+}
+
+/* Extra Content Sections */
+.extra-content {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #F39C12;
+    margin-bottom: 20px;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.feature {
+    background: #2C2F33;
+    padding: 20px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.feature:hover {
+    background: #35383D;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+.feature h2 {
+    
+    font-size: 1.5rem;
+    color: #F39C12;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #B0B0B0;
+    line-height: 1.6;
 }
 
 /* Animations */
@@ -107,11 +163,9 @@
 @media (max-width: 1024px) {
     .phead, .plhead {
         font-size: 2rem;
-        margin-left: 50px;
     }
 
     .pabt {
-        margin: 10px 50px;
         font-size: 1rem;
     }
 
@@ -127,25 +181,19 @@
 
 @media (max-width: 768px) {
     .prac {
-        height: auto;
         padding: 20px;
     }
 
     .pracupper {
-        height: auto;
         padding: 30px;
-        text-align: center;
     }
 
     .phead, .plhead {
         font-size: 1.8rem;
-        margin: 0;
     }
 
     .pabt {
-        margin: 10px;
         font-size: 0.95rem;
-        text-align: center;
     }
 
     .langs {

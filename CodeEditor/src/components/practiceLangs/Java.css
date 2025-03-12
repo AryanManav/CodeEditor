@@ -48,7 +48,7 @@
   .ques-number {
     font-weight: bold;
     margin-right: 8px;
-    color: #61afef;
+    color: #F39C12;
   }
   
   /* Hover and Active Effects */
@@ -71,7 +71,7 @@
     font-size: 16px;
     color: #bbb;
     padding: 10px;
-    border-left: 4px solid #61afef;
+    border-left: 4px solid #F39C12;
     max-width: 80vw;
     opacity: 0;
     animation: fadeIn 0.6s ease-in-out forwards 0.3s;

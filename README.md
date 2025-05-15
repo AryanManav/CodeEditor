@@ -31,7 +31,6 @@ A full-featured, web-based code editor built using the MERN stack (MongoDB, Expr
 | Backend       | Node.js, Express.js     |
 | Database      | MongoDB                 |
 | Execution Engine | Compilex             |
-| Real-Time      | WebSockets / Socket.IO |
 
 ---
 

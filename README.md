@@ -37,7 +37,7 @@ A full-featured, web-based code editor built using the MERN stack (MongoDB, Expr
 
 ## 📂 Project Structure
 
-# CodeEditor
+## CodeEditor
 
 - **public/** *(Static assets - images, icons, etc.)*
   - CideMaster.svg

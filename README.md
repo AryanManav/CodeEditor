@@ -37,3 +37,35 @@ A full-featured, web-based code editor built using the MERN stack (MongoDB, Expr
 
 ## 📂 Project Structure
 
+CodeEditor/
+├── public/ # Static assets (images, icons, etc.)
+│ ├── CideMaster.svg
+│ ├── CodeMaster.png
+│ ├── code.svg
+│ ├── java.png
+│ ├── python.png
+│ └── vite.svg
+
+├── src/ # Source code
+│ ├── assets/ # Additional assets (e.g., images, styles)
+│ ├── backend/ # Backend logic (e.g., API calls, compile functions)
+│ ├── components/ # React components
+│ ├── App.css
+│ ├── App.jsx # Root React component
+│ ├── index.css
+│ ├── lang.js # Language config for the editor
+│ └── main.jsx # Entry point
+
+├── .eslintrc.cjs # ESLint configuration
+├── .gitignore # Git ignored files
+├── README.md # Project documentation
+├── index.html # HTML template
+├── package.json # NPM dependencies
+├── package-lock.json # Dependency lock file
+├── postcss.config.js # PostCSS configuration
+├── tailwind.config.js # Tailwind CSS config
+├── vite.config.js # Vite build config
+
+yaml
+Copy
+Edit

@@ -1,17 +1,15 @@
-import './PlayGround.css'
-import { useState, useRef, useEffect } from 'react'
-import Output from './Output'
-import DropDown from './DropDown'
-import { LANGUAGE_CODE } from '../lang'
-import Editor, { DiffEditor, useMonaco, loader } from '@monaco-editor/react';
+import './PlayGround.css';
+import { useEffect, useRef } from 'react';
+import Editor, { loader } from '@monaco-editor/react';
+import './CodeEditor.css';
 
-function CodeEditor({value, languages}) {
+function CodeEditor({ value, languages }) {
+  const editorRef = useRef(null);
+
   useEffect(() => {
-    // Load the monaco instance from the loader
     loader.init().then((monaco) => {
-      // Define the dark GitHub-like theme
       monaco.editor.defineTheme('darkGitHubTheme', {
-        base: 'vs-dark', // Dark theme as a base
+        base: 'vs-dark',
         inherit: true,
         rules: [
           { token: 'comment', foreground: '6a737d' },
@@ -23,7 +21,6 @@ function CodeEditor({value, languages}) {
           { token: 'delimiter', foreground: 'abb2bf' },
           { token: 'type', foreground: 'e06c75' },
           { token: 'function', foreground: '61afef' },
-          // Add more token colors as needed
         ],
         colors: {
           'editor.foreground': '#abb2bf',
@@ -33,40 +30,44 @@ function CodeEditor({value, languages}) {
           'editorLineNumber.foreground': '#636d83',
           'editor.selectionBackground': '#3e4451',
           'editor.inactiveSelectionBackground': '#3e445199',
-        }
+        },
       });
     });
   }, []);
-  // const [languages, setLanguage] = useState("java");
-  // const [output, setoutput] = useState("");
-  // const [value, setValue] = useState(LANGUAGE_CODE["java"]);
 
-  const handleClick = (languages) => {
-    setLanguage(languages)
-    setValue(
-      LANGUAGE_CODE[languages]
-    )
-    setoutput("")
-  }
-  const editorRef = useRef(null);
-
-  function handleEditorDidMount(editor, monaco) {
+  const handleEditorDidMount = (editor) => {
     editorRef.current = editor;
-  }
+  };
 
   return (
-    <>
-          <Editor theme="darkGitHubTheme" height="80vh"
-            language={languages}
-            value={value}
-            options={{
-              fontSize: 16,
-              lineHeight: 20,
-            }}
-            onMount={handleEditorDidMount}
-          />
-    </>
-  )
+    <div className="rounded-xl overflow-hidden shadow-lg border border-zinc-700 bg-[#1D1F21] p-2">
+      <Editor
+        theme="darkGitHubTheme"
+        height="80vh"
+        language={languages}
+        value={value}
+        options={{
+          fontSize: 16,
+          lineHeight: 24,
+          fontFamily: 'Fira Code, monospace',
+          automaticLayout: true,
+          minimap: { enabled: false },
+          scrollBeyondLastLine: false,
+          wordWrap: 'on',
+          scrollbar: {
+            vertical: 'hidden',
+            horizontal: 'hidden',
+            handleMouseWheel: false,
+            alwaysConsumeMouseWheel: false,
+            useShadows: false,
+          },
+          overviewRulerLanes: 0,
+          renderLineHighlight: 'none',
+        }}
+        onMount={handleEditorDidMount}
+      />
+    </div>
+  );
 }
 
-export default CodeEditor
+export default CodeEditor;

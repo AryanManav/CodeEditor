@@ -1,0 +1,14 @@
+/* Hide scrollbars inside monaco completely */
+.monaco-editor,
+.monaco-editor .overflow-guard,
+.monaco-scrollable-element,
+.monaco-scrollable-element > .scrollbar,
+.monaco-editor .margin,
+.monaco-editor-background {
+  overflow: hidden !important;
+}
+
+.monaco-scrollable-element > .scrollbar {
+  display: none !important;
+  width: 0px !important;
+}

@@ -1,11 +1,14 @@
 import './index.css';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { SignIn, SignUp, UserButton, SignedIn, SignedOut, UserProfile  } from '@clerk/clerk-react';
 
 import Navbar from './components/top_bottom/Navbar.jsx';
 import Footer from './components/top_bottom/Footer.jsx';
 
 import Home from './components/Home';
 import PlayGround from './components/PlayGround';
+import Dashboard from './components/Dashboard.jsx';
+import Profile from './components/Profile.jsx';
 
 // Java
 import JavaMain from './components/practiceLangs/Java/index.jsx';
@@ -53,6 +56,17 @@ import Hashing from './components/courses/dsa/Hashing.jsx';
 import HTML from './components/courses/webd/HTML.jsx';
 import CSS from './components/courses/webd/CSS.jsx';
 
+
+// DSA Problems
+import Practice from './components/practice/Practice.jsx';
+import TwoSum from './components/practice/problems/twoSum/TwoSum.jsx';
+import BinarySearch from './components/practice/problems/binarySearch/BinarySearch.jsx';
+import ProblemsList from './components/practice/problems/ProblemsList.jsx';
+
+
+import RequireAuth from './components/RequireAuth.jsx';
+
+
 function Layout() {
   return (
     <>
@@ -64,86 +78,134 @@ function Layout() {
 }
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: 'playground', element: <PlayGround /> },
-      {
-        path: 'dsa-course',
-        element: <DSACourse />,
-        children: [
-          { path: 'array', element: <Array /> },
-          { path: 'hashing', element: <Hashing /> },
-        ],
-      },
-      {
-        path: 'web-development',
-        element: <WebDevelopment />,
-        children: [
-          { path: 'html', element: <HTML /> },
-          { path: 'css', element: <CSS /> },
-        ],
-      },
-      { path: 'courses', element: <CoursesMain /> },
+{
+  path: '/',
+  element: <Layout />,
+  children: [
+    { index: true, element: <Home /> },
 
-      {
-        path: 'java',
-        element: <JavaMain />,
-        children: [
-          { path: 'basics/intro', element: <IntroToJava /> },
-          { path: 'basics/variables', element: <Variables /> },
-          { path: 'basics/datatypes', element: <DataTypes /> },
-          { path: 'oops/classes-and-objects', element: <ClassesAndObjects /> },
-          { path: 'oops/inheritance', element: <Inheritance /> },
-        ]
-      },
-      {
-        path: 'python',
-        element: <PythonMain />,
-        children: [
-          { path: 'basics/intro', element: <IntroToPython /> },
-          { path: 'basics/variables', element: <VariablesPython /> },
-          { path: 'basics/datatypes', element: <DataTypesPython /> },
-          { path: 'functions/functions', element: <FunctionsPython /> },
-        ]
-      },
-      {
-        path: 'cpp',
-        element: <CppMain />,
-        children: [
-          { path: 'basics/intro', element: <IntroToCpp /> },
-          { path: 'basics/variables', element: <VariablesCpp /> },
-          { path: 'basics/datatypes', element: <DataTypesCpp /> },
-          { path: 'oops/classes-and-objects', element: <OOPsCpp /> },
-        ]
-      },
-      {
-        path: 'c',
-        element: <CMain />,
-        children: [
-          { path: 'basics/intro', element: <IntroToC /> },
-          { path: 'basics/variables', element: <VariablesC /> },
-          { path: 'basics/datatypes', element: <DataTypesC /> },
-          { path: 'basics/functions', element: <FunctionsC /> },
-        ]
-      },
-      {
-        path: 'javascript',
-        element: <JavaScriptMain />,
-        children: [
-          { path: 'basics/intro', element: <IntroToJS /> },
-          { path: 'basics/variables', element: <VariablesJS /> },
-          { path: 'basics/datatypes', element: <DataTypesJS /> },
-          { path: 'basics/functions', element: <FunctionsJS /> },
-          { path: 'oops/classes-and-objects', element: <ClassesJS /> },
-        ]
-      }
+    {
+      path: 'playground',
+      element: (
+        <RequireAuth>
+          <PlayGround />
+        </RequireAuth>
+      ),
+    },
+    {
+      path: 'dsa-course',
+      element: <DSACourse />,
+      children: [
+        { path: 'array', element: <Array /> },
+        { path: 'hashing', element: <Hashing /> },
+      ],
+    },
+    {
+      path: 'web-development',
+      element: <WebDevelopment />,
+      children: [
+        { path: 'html', element: <HTML /> },
+        { path: 'css', element: <CSS /> },
+      ],
+    },
+    { path: 'courses', element: <CoursesMain /> },
+    { path: 'sign-in', element: <SignIn /> },
+    { path: 'sign-up', element: <SignUp /> },
 
+    {
+      path: 'dashboard',
+      element: (
+        <RequireAuth>
+          <Dashboard />
+        </RequireAuth>
+      ),
+    },
+    {
+      path: 'profile',
+      element: (
+        <RequireAuth>
+          <Profile />
+        </RequireAuth>
+      ),
+    },
 
-    ]
-  }
+    {
+      path: 'practice',
+      element: (
+        <RequireAuth>
+          <Practice />
+        </RequireAuth>
+      ),
+    },
+
+    {
+      path: 'problems',
+      element: (
+        <RequireAuth>
+          <ProblemsList />
+        </RequireAuth>
+      ),
+      children: [
+        { path: 'two-sum', element: <TwoSum /> },
+        { path: 'binary-search', element: <BinarySearch /> },
+      ],
+    },
+
+    {
+      path: 'java',
+      element: <JavaMain />,
+      children: [
+        { path: 'basics/intro', element: <IntroToJava /> },
+        { path: 'basics/variables', element: <Variables /> },
+        { path: 'basics/datatypes', element: <DataTypes /> },
+        { path: 'oops/classes-and-objects', element: <ClassesAndObjects /> },
+        { path: 'oops/inheritance', element: <Inheritance /> },
+      ],
+    },
+    {
+      path: 'python',
+      element: <PythonMain />,
+      children: [
+        { path: 'basics/intro', element: <IntroToPython /> },
+        { path: 'basics/variables', element: <VariablesPython /> },
+        { path: 'basics/datatypes', element: <DataTypesPython /> },
+        { path: 'functions/functions', element: <FunctionsPython /> },
+      ],
+    },
+    {
+      path: 'cpp',
+      element: <CppMain />,
+      children: [
+        { path: 'basics/intro', element: <IntroToCpp /> },
+        { path: 'basics/variables', element: <VariablesCpp /> },
+        { path: 'basics/datatypes', element: <DataTypesCpp /> },
+        { path: 'oops/classes-and-objects', element: <OOPsCpp /> },
+      ],
+    },
+    {
+      path: 'c',
+      element: <CMain />,
+      children: [
+        { path: 'basics/intro', element: <IntroToC /> },
+        { path: 'basics/variables', element: <VariablesC /> },
+        { path: 'basics/datatypes', element: <DataTypesC /> },
+        { path: 'basics/functions', element: <FunctionsC /> },
+      ],
+    },
+    {
+      path: 'javascript',
+      element: <JavaScriptMain />,
+      children: [
+        { path: 'basics/intro', element: <IntroToJS /> },
+        { path: 'basics/variables', element: <VariablesJS /> },
+        { path: 'basics/datatypes', element: <DataTypesJS /> },
+        { path: 'basics/functions', element: <FunctionsJS /> },
+        { path: 'oops/classes-and-objects', element: <ClassesJS /> },
+      ],
+    },
+  ],
+}
+
 ]);
 
 function App() {

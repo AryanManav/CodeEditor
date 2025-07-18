@@ -5,66 +5,134 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-black">
+    <footer className="bg-white text-black dark:bg-zinc-900 dark:text-white transition-colors duration-300">
       <div className="mx-auto max-w-screen-xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div>
-            <NavLink to="/" className="text-3xl font-bold tracking-wide text-black">
+            <NavLink
+              to="/"
+              className="text-3xl font-bold tracking-wide text-black dark:text-white"
+            >
               CodeMaster
             </NavLink>
-            <p className="mt-3 text-sm text-black/80">
+            <p className="mt-3 text-sm text-black/80 dark:text-white/70">
               Your gateway to mastering coding and development skills.
             </p>
           </div>
 
           {/* Navigation Links */}
           <div>
-            <h2 className="mb-4 text-sm font-semibold uppercase">Explore</h2>
-            <ul className="space-y-2 text-sm text-black/80">
-              <li><NavLink to="/courses" className="hover:underline">Courses</NavLink></li>
-              <li><NavLink to="/tutorials" className="hover:underline">Tutorials</NavLink></li>
-              <li><NavLink to="/practice" className="hover:underline">Practice Problems</NavLink></li>
-              <li><NavLink to="/jobs" className="hover:underline">Job Board</NavLink></li>
+            <h2 className="mb-4 text-sm font-semibold uppercase dark:text-white">
+              Explore
+            </h2>
+            <ul className="space-y-2 text-sm text-black/80 dark:text-white/70">
+              <li>
+                <NavLink to="/courses" className="hover:underline">
+                  Courses
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/tutorials" className="hover:underline">
+                  Tutorials
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/practice" className="hover:underline">
+                  Practice Problems
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/jobs" className="hover:underline">
+                  Job Board
+                </NavLink>
+              </li>
             </ul>
           </div>
 
           {/* Quick Access */}
           <div>
-            <h2 className="mb-4 text-sm font-semibold uppercase">Tools</h2>
-            <ul className="space-y-2 text-sm text-black/80">
-              <li><NavLink to="/playground" className="hover:underline">Code Playground</NavLink></li>
-              <li><NavLink to="/compiler" className="hover:underline">Online Compiler</NavLink></li>
-              <li><NavLink to="/leaderboard" className="hover:underline">Leaderboard</NavLink></li>
-              <li><NavLink to="/profile" className="hover:underline">My Profile</NavLink></li>
+            <h2 className="mb-4 text-sm font-semibold uppercase dark:text-white">
+              Tools
+            </h2>
+            <ul className="space-y-2 text-sm text-black/80 dark:text-white/70">
+              <li>
+                <NavLink to="/playground" className="hover:underline">
+                  Code Playground
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/compiler" className="hover:underline">
+                  Online Compiler
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/leaderboard" className="hover:underline">
+                  Leaderboard
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/profile" className="hover:underline">
+                  My Profile
+                </NavLink>
+              </li>
             </ul>
           </div>
 
           {/* Follow & Legal */}
           <div>
-            <h2 className="mb-4 text-sm font-semibold uppercase">Connect</h2>
+            <h2 className="mb-4 text-sm font-semibold uppercase dark:text-white">
+              Connect
+            </h2>
             <div className="flex items-center gap-4 mb-4">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-black">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-black dark:hover:text-white"
+              >
                 <FaGithub size={20} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-black">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-black dark:hover:text-white"
+              >
                 <FaLinkedin size={20} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-black">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-black dark:hover:text-white"
+              >
                 <FaTwitter size={20} />
               </a>
             </div>
-            <ul className="space-y-2 text-sm text-black/80">
-              <li><NavLink to="/privacy" className="hover:underline">Privacy Policy</NavLink></li>
-              <li><NavLink to="/terms" className="hover:underline">Terms & Conditions</NavLink></li>
-              <li><NavLink to="/contact" className="hover:underline">Contact Us</NavLink></li>
+            <ul className="space-y-2 text-sm text-black/80 dark:text-white/70">
+              <li>
+                <NavLink to="/privacy" className="hover:underline">
+                  Privacy Policy
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/terms" className="hover:underline">
+                  Terms & Conditions
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/contact" className="hover:underline">
+                  Contact Us
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
 
         <hr className="my-8 border-purple-600/20" />
 
-        <div className="text-center text-sm text-black/70">
+        <div className="text-center text-sm text-black/70 dark:text-white/50">
           © {new Date().getFullYear()} CodeMaster™ — All Rights Reserved.
         </div>
       </div>

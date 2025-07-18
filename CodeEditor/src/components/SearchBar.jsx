@@ -27,17 +27,17 @@ const SearchBar = () => {
   return (
     <form
       onSubmit={handleSearch}
-      className="flex items-center max-w-xl mx-auto border border-purple-300 rounded-md px-4 py-3 bg-white shadow"
+      className="flex items-center max-w-xl mx-auto border border-purple-300 dark:border-purple-300 rounded-md px-4 py-3 bg-white dark:bg-zinc-900 shadow"
     >
       <input
         type="text"
         placeholder="Search e.g., Python Variables"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="w-full text-gray-800 placeholder-gray-500 bg-transparent border-none focus:outline-none focus:ring-0"
+        className="w-full text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 bg-transparent border-none focus:outline-none focus:ring-0"
       />
       <button type="submit">
-        <FaSearch className="text-purple-600 text-lg ml-2" />
+        <FaSearch className="text-purple-600 dark:text-purple-400 text-lg ml-2" />
       </button>
     </form>
   );

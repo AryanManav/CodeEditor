@@ -7,17 +7,21 @@ const DropDown = ({ lang, handleClick }) => {
 
   return (
     <div className="relative w-full">
-      {/* Top bar with center text and right dropdown */}
       <div className="flex justify-between items-center px-4 py-2">
-        {/* Empty div to balance the layout */}
         <div className="w-1/4" />
 
-
-        {/* Right-aligned dropdown */}
         <div className="w-1/4 flex justify-end">
-          <Dropdown label={lang.toUpperCase()} inline>
+          <Dropdown
+            label={lang.toUpperCase()}
+            inline
+            className="text-gray-900 bg-white dark:bg-zinc-800 dark:text-gray-200 border dark:border-zinc-700"
+          >
             {languages.map(([language], index) => (
-              <Dropdown.Item key={index} onClick={() => handleClick(language)}>
+              <Dropdown.Item
+                key={index}
+                onClick={() => handleClick(language)}
+                className="hover:bg-gray-100 dark:hover:bg-zinc-700"
+              >
                 {language.toUpperCase()}
               </Dropdown.Item>
             ))}

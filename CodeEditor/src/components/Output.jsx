@@ -41,10 +41,10 @@ const Output = ({ editorRef, lang, output, setoutput }) => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col bg-white border rounded-lg shadow-md p-4">
+    <div className="w-full h-full flex flex-col bg-white dark:bg-gray-900 border dark:border-gray-700 rounded-lg shadow-md p-4">
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
-        <h2 className="text-lg font-semibold text-purple-700">Output</h2>
+        <h2 className="text-lg font-semibold text-purple-700 dark:text-purple-400">Output</h2>
         <button
           onClick={onSubmit}
           className="bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium px-4 py-1.5 rounded shadow transition"
@@ -55,8 +55,11 @@ const Output = ({ editorRef, lang, output, setoutput }) => {
 
       {/* Output Display */}
       <div
-        className={`flex-1 p-3 rounded-md text-sm font-mono whitespace-pre-wrap overflow-y-auto border ${
-          wrong ? "bg-red-50 border-red-400 text-red-700" : "bg-gray-100 border-gray-300 text-gray-800"
+        className={`flex-1 p-3 rounded-md text-sm font-mono whitespace-pre-wrap overflow-y-auto border 
+        ${
+          wrong
+            ? "bg-red-50 dark:bg-red-950 border-red-400 text-red-700 dark:text-red-400"
+            : "bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-100"
         }`}
       >
         {output ? output : "Click on 'Run Code' to see output here."}

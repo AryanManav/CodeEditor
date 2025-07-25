@@ -87,9 +87,9 @@ const Navbar = () => {
         </div>
 
         <div className="ml-auto flex items-center gap-4 text-gray-700 dark:text-gray-200 text-lg">
-          {/* <button onClick={toggleTheme} aria-label="Toggle theme" className="hover:text-purple-600 dark:hover:text-purple-400">
+          <button onClick={toggleTheme} aria-label="Toggle theme" className="hover:text-purple-600 dark:hover:text-purple-400">
             {darkMode ? <FaSun /> : <FaMoon />}
-          </button> */}
+          </button>
 
           {user ? (
             <div className="relative" ref={dropdownRef}>
